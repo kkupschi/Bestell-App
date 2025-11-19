@@ -49,7 +49,44 @@ body {
     padding-left: 12px;
 }
 
-/* einzelne Gericht-Karte */
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.cart-item-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-item-name {
+    font-weight: bold;
+}
+
+.cart-item-amount {
+    font-size: 13px;
+    color: #666;
+}
+
+.cart-item-right {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-price {
+    font-weight: bold;
+}
+
+#cartTotal {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* einzelne Gericht Karte */
 .dish-card {
     border: 1px solid #ddd;
     border-radius: 8px;
