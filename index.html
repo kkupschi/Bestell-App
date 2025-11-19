@@ -1,17 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="db.js"></script>
-    <script src="script.js"></script>
+    <meta charset="utf-8">
+    <title>BestellApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="icon" type="image/x-icon" href="Favicon/favicon.ico">
 </head>
 
 <body>
 
+    <header class="topbar">
+        <div class="topbar-inner">
+            <img src="Logo/Logo.png" alt="BestellApp Logo" class="logo">
+            <span class="app-name">BestellApp</span>
+        </div>
+    </header>
+
+    <main class="layout">
+        <section class="menu-section">
+            <h2>Speisekarte</h2>
+            <div id="dishList"></div>
+        </section>
+
+        <aside class="cart-section">
+            <h2>Warenkorb</h2>
+            <div id="cartList">Noch keine Gerichte im Warenkorb.</div>
+            <div id="cartTotal"></div>
+        </aside>
+    </main>
+
+    <script src="db.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

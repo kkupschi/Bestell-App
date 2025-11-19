@@ -1,0 +1,91 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Header */
+.topbar {
+    background: #ff8800;
+    color: white;
+    padding: 10px 16px;
+}
+
+.topbar-inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    height: 32px;
+}
+
+.app-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Layout */
+.layout {
+    display: flex;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 16px;
+}
+
+/* Speisekarte links */
+.menu-section {
+    flex: 2;
+}
+
+/* Warenkorb rechts */
+.cart-section {
+    flex: 1;
+    border-left: 1px solid #ddd;
+    padding-left: 12px;
+}
+
+/* einzelne Gericht-Karte */
+.dish-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 8px;
+}
+
+.dish-name {
+    font-weight: bold;
+}
+
+.dish-description {
+    font-size: 14px;
+    color: #555;
+}
+
+.dish-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    align-items: center;
+}
+
+.dish-price {
+    color: #ff8800;
+    font-weight: bold;
+}
+
+.add-btn {
+    border: none;
+    background: #ff8800;
+    color: white;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 20px;
+}
