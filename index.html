@@ -12,20 +12,21 @@
 </head>
 
 <body>
-
+    <!-- Header -->
     <header class="topbar">
         <div class="topbar-inner">
             <img src="Logo/Logo.png" class="logo">
         </div>
     </header>
 
+    <!-- Header Logo -->
     <section class="restaurant-header">
         <div class="restaurant-image-wrapper">
             <img src="pictures/Pizza.jpg" class="restaurant-image" alt="Restaurant Bild">
         </div>
-
+        <!-- Header Rund Logo -->
         <img src="Logo/Chefkoch.jpg" class="restaurant-logo" alt="Pizzeria Giordano Logo">
-
+        <!-- Überschrift + Informationen -->
         <div class="restaurant-info">
             <h1 class="restaurant-title">Pizzeria Giordano</h1>
             <div class="restaurant-details">
@@ -37,7 +38,7 @@
     </section>
 
     <main class="layout">
-
+        <!-- Gerichte -->
         <section class="menu-section">
             <div id="categoryTabs" class="category-tabs"></div>
 
@@ -45,8 +46,13 @@
             <div id="dishList"></div>
         </section>
 
+        <!-- Warenkorb -->
         <aside class="cart-section">
-            <h2>Warenkorb</h2>
+            <div class="cart-header">
+                <h2>Warenkorb</h2>
+                <button class="cart-close-btn" onclick="closeMobileCart()">X</button>
+            </div>
+
             <div id="cartList">Noch keine Gerichte im Warenkorb.</div>
             <div id="cartTotal"></div>
 
@@ -55,6 +61,7 @@
 
     </main>
 
+    <!-- Footer -->
     <footer class="page-footer">
         <div class="footer-inner">
             <span>© 2025 Paradise Noodles · BestellApp</span>
@@ -64,6 +71,10 @@
             </span>
         </div>
     </footer>
+
+    <button id="cartToggleBtn" class="cart-toggle-btn" onclick="openMobileCart()">
+        Warenkorb
+    </button>
 
     <script src="db.js"></script>
     <script src="script.js"></script>

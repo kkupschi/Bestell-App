@@ -187,6 +187,15 @@ function placeOrder() {
     renderCart();
 }
 
+function openMobileCart() {
+    document.body.classList.add("show-cart");
+}
+
+function closeMobileCart() {
+    document.body.classList.remove("show-cart");
+}
+
+
 init();
 
 function renderCategoryTabs() {
