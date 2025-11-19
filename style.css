@@ -49,40 +49,97 @@ body {
     padding-left: 12px;
 }
 
+/* Ein einzelnes Item im Warenkorb */
 .cart-item {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 6px;
-    padding-bottom: 4px;
+    padding: 6px 0 10px;
     border-bottom: 1px solid #eee;
     font-size: 14px;
 }
 
-.cart-item-left {
+/* Zeile 1: Name + Mülleimer */
+.cart-item-row.top-row {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .cart-item-name {
     font-weight: bold;
 }
 
-.cart-item-amount {
-    font-size: 13px;
-    color: #666;
+/* Zeile 2: (- 4x +) links und Preis rechts */
+.cart-item-row.bottom-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 6px;
 }
 
-.cart-item-right {
+/* Block für - 4x + */
+.cart-controls {
     display: flex;
     align-items: center;
+    gap: 6px;
 }
 
+.cart-item-amount {
+    min-width: 26px;
+    text-align: center;
+}
+
+/* Preis rechts in Zeile 2 */
 .cart-item-price {
     font-weight: bold;
 }
 
+/* Buttons im Warenkorb */
+.cart-btn {
+    border: none;
+    background: #ff8800;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.cart-btn.small {
+    width: 26px;
+    height: 22px;
+}
+
+/* Mülleimer-Button */
+.cart-btn.delete {
+    background: transparent;
+    color: #ff8800;
+    font-size: 16px;
+    width: 24px;
+    height: 24px;
+}
+
+.cart-btn:hover {
+    background: #ff9d33;
+}
+
+.cart-btn.delete:hover {
+    background: transparent;
+    color: #d9534f;
+}
+
+/* Bereich für Zwischensumme / Lieferkosten / Gesamt */
 #cartTotal {
     margin-top: 10px;
+    font-weight: normal;
+}
+
+.cart-summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+.cart-summary-row.total {
+    margin-top: 8px;
     font-weight: bold;
 }
 
