@@ -175,6 +175,18 @@ function init() {
     renderCart();
 }
 
+function placeOrder() {
+    if (cart.length === 0) {
+        alert("Du hast noch keine Gerichte im Warenkorb.");
+        return;
+    }
+
+    alert("Deine Testbestellung wurde abgeschickt. Danke!");
+
+    cart = [];
+    renderCart();
+}
+
 init();
 
 function renderCategoryTabs() {
