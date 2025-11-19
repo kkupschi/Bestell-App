@@ -87,7 +87,7 @@ function renderCart() {
     }
 
     let subtotal = calculateCartTotal();
-    let shipping = subtotal > 0 ? 5 : 0;     // 5€ Lieferkosten wie im Screenshot
+    let shipping = subtotal > 0 ? 5 : 0;
     let finalTotal = subtotal + shipping;
 
     cartTotalElement.innerHTML = createCartSummaryHtml(subtotal, shipping, finalTotal);
@@ -124,7 +124,7 @@ function createCartItemHtml(cartItem, index) {
         <button class="cart-btn delete" onclick="deleteCartItem(${index})">🗑</button>
       </div>
 
-      <!-- Zeile 2: - 4x +   und Preis rechts -->
+      <!-- Zeile 2: - 4x + und Preis rechts -->
       <div class="cart-item-row bottom-row">
         <div class="cart-controls">
           <button class="cart-btn small" onclick="decreaseAmount(${index})">−</button>

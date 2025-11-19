@@ -15,12 +15,29 @@
 
     <header class="topbar">
         <div class="topbar-inner">
-            <img src="Logo/Logo.png" alt="BestellApp Logo" class="logo">
-            <span class="app-name">BestellApp</span>
+            <img src="Logo/Logo.png" class="logo">
         </div>
     </header>
 
+    <section class="restaurant-header">
+        <div class="restaurant-image-wrapper">
+            <img src="pictures/Pizza.jpg" class="restaurant-image" alt="Restaurant Bild">
+        </div>
+
+        <img src="Logo/ParadiseNoodel.png" class="restaurant-logo">
+
+        <div class="restaurant-info">
+            <h1 class="restaurant-title">Paradise Noodles</h1>
+            <div class="restaurant-details">
+                <span class="rating">⭐ 4,2 (von 5 Sternen)</span>
+                <span class="separator">•</span>
+                <span class="delivery">Lieferkosten: 5,00€</span>
+            </div>
+        </div>
+    </section>
+
     <main class="layout">
+
         <section class="menu-section">
             <h2>Speisekarte</h2>
             <div id="dishList"></div>
@@ -31,6 +48,7 @@
             <div id="cartList">Noch keine Gerichte im Warenkorb.</div>
             <div id="cartTotal"></div>
         </aside>
+
     </main>
 
     <script src="db.js"></script>
