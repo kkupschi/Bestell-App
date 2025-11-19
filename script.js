@@ -124,14 +124,14 @@ function createCartItemHtml(cartItem, index) {
     return /*html*/ `
     <div class="cart-item">
 
-      <!-- Zeile 1: Name + Delete -->
+      <!-- Warenkorb Zeile 1 | Name + Delete -->
       <div class="cart-item-row top-row">
         <span class="cart-item-name">${dish.name}</span>
 
         <button class="cart-btn delete" onclick="deleteCartItem(${index})">🗑</button>
       </div>
 
-      <!-- Zeile 2: - 4x + und Preis rechts -->
+      <!-- Warenkorb Zeile 2 | - Zahl + | Preis -->
       <div class="cart-item-row bottom-row">
         <div class="cart-controls">
           <button class="cart-btn small" onclick="decreaseAmount(${index})">−</button>
@@ -166,9 +166,12 @@ function formatPrice(value) {
 }
 
 function init() {
-    currentCategoryId = null;
+
+    currentCategoryId = "vorspeisen";
+
     renderCategoryTabs();
     renderDishList();
+    updateHeaderImage(currentCategoryId);
     renderCart();
 }
 

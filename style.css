@@ -117,6 +117,13 @@ body {
     flex: 1;
     border-left: 1px solid #ddd;
     padding-left: 12px;
+
+    position: sticky;
+    top: 120px;
+    align-self: flex-start;
+
+    max-height: calc(100vh - 140px);
+    overflow-y: auto;
 }
 
 /* Ein einzelnes Item im Warenkorb */
