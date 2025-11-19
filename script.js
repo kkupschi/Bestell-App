@@ -1,4 +1,5 @@
 let cart = [];
+let currentCategoryId = null;
 
 function init() {
     renderDishList();
@@ -10,9 +11,15 @@ function renderDishList() {
 
     for (let i = 0; i < dishes.length; i++) {
         let dish = dishes[i];
+
+        if (currentCategoryId && dish.category !== currentCategoryId) {
+            continue;
+        }
+
         dishListElement.innerHTML += createDishHtml(dish, i);
     }
 }
+
 
 function createDishHtml(dish, index) {
     return /*html*/ `
@@ -159,8 +166,60 @@ function formatPrice(value) {
 }
 
 function init() {
+    currentCategoryId = null;
+    renderCategoryTabs();
     renderDishList();
     renderCart();
 }
 
 init();
+
+function renderCategoryTabs() {
+    let tabsElement = document.getElementById("categoryTabs");
+    let html = "";
+
+    for (let i = 0; i < categories.length; i++) {
+        let category = categories[i];
+        let isActive = category.id === currentCategoryId;
+        html += createCategoryTabHtml(category, isActive);
+    }
+
+    tabsElement.innerHTML = html;
+}
+
+function createCategoryTabHtml(category, isActive) {
+    let activeClass = isActive ? " active" : "";
+    return /*html*/ `
+    <button class="category-tab${activeClass}" onclick="selectCategory('${category.id}')">
+      ${category.name}
+    </button>
+  `;
+}
+
+function selectCategory(categoryId) {
+    currentCategoryId = categoryId;
+
+    renderCategoryTabs();
+    renderDishList();
+    updateHeaderImage(categoryId);
+}
+
+function updateHeaderImage(categoryId) {
+    let imageElement = document.querySelector(".restaurant-image");
+    if (!imageElement) {
+        return;
+    }
+
+    let imageSrc = null;
+
+    for (let i = 0; i < categories.length; i++) {
+        if (categories[i].id === categoryId) {
+            imageSrc = categories[i].headerImage;
+            break;
+        }
+    }
+
+    if (imageSrc) {
+        imageElement.src = imageSrc;
+    }
+}
