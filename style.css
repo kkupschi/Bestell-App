@@ -204,7 +204,6 @@ main.layout {
     cursor: pointer;
 }
 
-
 .order-btn {
     margin-top: 12px;
     width: 100%;
@@ -316,7 +315,6 @@ main.layout {
     background: #f9f9f9;
     margin-top: 24px;
 }
-
 
 .footer-inner {
     display: flex;

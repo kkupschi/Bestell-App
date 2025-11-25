@@ -20,7 +20,6 @@ function renderDishList() {
     }
 }
 
-
 function createDishHtml(dish, index) {
     return /*html*/ `
     <div class="dish-card">
@@ -215,7 +214,6 @@ function openMobileCart() {
 function closeMobileCart() {
     document.body.classList.remove("show-cart");
 }
-
 
 init();
 
