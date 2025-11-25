@@ -98,6 +98,27 @@ function renderCart() {
     let finalTotal = subtotal + shipping;
 
     cartTotalElement.innerHTML = createCartSummaryHtml(subtotal, shipping, finalTotal);
+
+    updateCartToggleButton();
+}
+
+function updateCartToggleButton() {
+    let btn = document.getElementById("cartToggleBtn");
+    if (!btn) {
+        return;
+    }
+
+    let totalAmount = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+        totalAmount += cart[i].amount;
+    }
+
+    if (totalAmount === 0) {
+        btn.innerText = "Warenkorb";
+    } else {
+        btn.innerText = "Warenkorb (" + TotalAmount + ")";
+    }
 }
 
 function createCartSummaryHtml(subtotal, shipping, finalTotal) {
