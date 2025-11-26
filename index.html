@@ -39,22 +39,26 @@
 
     <main class="layout">
         <!-- Gerichte -->
-        <section class="menu-section">
+        <div class="menu-section">
             <div id="categoryTabs" class="category-tabs"></div>
 
             <h2>Speisekarte</h2>
             <div id="dishList"></div>
-        </section>
+        </div>
 
         <!-- Warenkorb -->
         <aside class="cart-section">
             <div class="cart-header">
                 <h2>Warenkorb</h2>
-                <button class="cart-close-btn" onclick="closeMobileCart()">X</button>
+                <button class="cart-close-btn" onclick="closeMobileCart()">✕</button>
             </div>
 
-            <div id="cartList">Noch keine Gerichte im Warenkorb.</div>
+            <div class="cart-content">
+                <div id="cartList">Noch keine Gerichte im Warenkorb.</div>
+            </div>
+
             <div id="cartTotal"></div>
+            <div id="orderMessage" class="order-message"></div>
 
             <button class="order-btn" onclick="placeOrder()">Bestellen</button>
         </aside>

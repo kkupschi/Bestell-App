@@ -1,10 +1,6 @@
 let cart = [];
 let currentCategoryId = null;
 
-function init() {
-    renderDishList();
-}
-
 function renderDishList() {
     let dishListElement = document.getElementById("dishList");
     dishListElement.innerHTML = "";
@@ -77,15 +73,17 @@ function deleteCartItem(cartIndex) {
 }
 
 function renderCart() {
-    let cartListElement = document.getElementById("cartList");
-    let cartTotalElement = document.getElementById("cartTotal");
-
     if (cart.length === 0) {
-        cartListElement.innerHTML = "Noch keine Gerichte im Warenkorb.";
-        cartTotalElement.innerHTML = "";
-        return;
+        showEmptyCart();
+    } else {
+        showFilledCart();
     }
 
+    updateCartToggleButton();
+}
+
+function showFilledCart() {
+    let cartListElement = document.getElementById("cartList");
     cartListElement.innerHTML = "";
 
     for (let i = 0; i < cart.length; i++) {
@@ -96,9 +94,8 @@ function renderCart() {
     let shipping = subtotal > 0 ? 5 : 0;
     let finalTotal = subtotal + shipping;
 
+    let cartTotalElement = document.getElementById("cartTotal");
     cartTotalElement.innerHTML = createCartSummaryHtml(subtotal, shipping, finalTotal);
-
-    updateCartToggleButton();
 }
 
 function updateCartToggleButton() {
@@ -116,7 +113,7 @@ function updateCartToggleButton() {
     if (totalAmount === 0) {
         btn.innerText = "Warenkorb";
     } else {
-        btn.innerText = "Warenkorb (" + TotalAmount + ")";
+        btn.innerText = "Warenkorb (" + totalAmount + ")";
     }
 }
 
@@ -197,14 +194,32 @@ function init() {
 
 function placeOrder() {
     if (cart.length === 0) {
-        alert("Du hast noch keine Gerichte im Warenkorb.");
+        showOrderMessage("Du hast noch keine Gerichte im Warenkorb.", true);
         return;
     }
 
-    alert("Deine Testbestellung wurde abgeschickt. Danke!");
-
+    showOrderMessage("Deine Testbestellung wurde abgeschickt. Danke!", false);
     cart = [];
     renderCart();
+}
+
+function showOrderMessage(text, isError) {
+    let messageElement = document.getElementById("orderMessage");
+    if (!messageElement) {
+        return;
+    }
+
+    messageElement.textContent = text;
+    messageElement.classList.toggle("error", isError);
+}
+
+function showEmptyCart() {
+    let cartListElement = document.getElementById("cartList");
+    let cartTotalElement = document.getElementById("cartTotal");
+
+    cartListElement.innerHTML = "Noch keine Gerichte im Warenkorb.";
+    cartTotalElement.innerHTML = "";
+    showOrderMessage("", false);
 }
 
 function openMobileCart() {
